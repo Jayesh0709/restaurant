@@ -7,8 +7,8 @@ const Order = ({url}) => {
   const token = localStorage.getItem("token");
   const [data, setdata] = useState([]);
   const fetch = async () => {
-    const response = await axios.get(url, { headers: { token } });
-    // console.log(response.data.orders);
+    const response = await axios.get(url+'/api/food/orderlist', { headers: { token } });
+    console.log(response.data);
     setdata(response.data.orders);
   }
 
@@ -16,7 +16,7 @@ const Order = ({url}) => {
 
   const status = async (event, orderId) => {
     console.log(event.target.value)
-    const response = await axios.post(url, {
+    const response = await axios.post(url+'/api/order/status', {
       orderId: orderId,
       status: event.target.value
     },
