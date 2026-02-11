@@ -1,6 +1,6 @@
 import express from 'express';
 import { addFood, listFood, removeFood } from '../controllers/foodController.js';
-// import multer from 'multer';
+import multer from 'multer';
 import { listOrder } from '../controllers/orderModel.js';
 
 
