@@ -7,7 +7,7 @@ const Order = ({url}) => {
   const token = localStorage.getItem("token");
   const [data, setdata] = useState([]);
   const fetch = async () => {
-    const response = await axios.get('http://localhost:4000/api/food/orderlist', { headers: { token } });
+    const response = await axios.get(url, { headers: { token } });
     // console.log(response.data.orders);
     setdata(response.data.orders);
   }
