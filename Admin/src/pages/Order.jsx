@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { assets1 } from '../assets/assets';
-const Order = () => {
+const Order = ({url}) => {
   const token = localStorage.getItem("token");
   const [data, setdata] = useState([]);
   const fetch = async () => {
@@ -16,7 +16,7 @@ const Order = () => {
 
   const status = async (event, orderId) => {
     console.log(event.target.value)
-    const response = await axios.post('http://localhost:4000/api/order/status', {
+    const response = await axios.post(url, {
       orderId: orderId,
       status: event.target.value
     },
