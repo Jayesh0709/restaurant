@@ -9,7 +9,7 @@ import Order from './pages/Order'
 import List from './pages/List'
 import { ToastContainer, toast } from 'react-toastify';
 function App() {
-  const url = 'http://localhost:4000';
+  const url = 'https://restaurant-mu-three.vercel.app';
   return (
     <>
       <ToastContainer />
