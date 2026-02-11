@@ -9,7 +9,7 @@ const StorecontextProvider = (props) => {
 
     const [cartItems, setcartItems] = useState({});
     const [token, settoken] = useState("");
-    const url = "http://localhost:4000"
+    const url = "https://restaurant-mu-three.vercel.app/"
     const addItems = async (itemId) => {
         if (!cartItems[itemId]) {
             setcartItems((prev) => ({ ...prev, [itemId]: 1 }));
