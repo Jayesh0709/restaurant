@@ -18,7 +18,7 @@ app.use(cors());
 
 
 // connect DB
-connect()
+await connect();
 
 
 
@@ -37,3 +37,4 @@ app.get("/", (req, res) => {
 app.listen(port, () => {
     console.log(`server runs on port : ${port}`);
 })
+
