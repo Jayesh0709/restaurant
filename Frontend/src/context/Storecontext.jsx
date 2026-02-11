@@ -9,7 +9,7 @@ const StorecontextProvider = (props) => {
 
     const [cartItems, setcartItems] = useState({});
     const [token, settoken] = useState("");
-    const url = "https://restaurant-mu-three.vercel.app"
+    const url =  "https://restaurant-1-z2au.onrender.com"
     const addItems = async (itemId) => {
         if (!cartItems[itemId]) {
             setcartItems((prev) => ({ ...prev, [itemId]: 1 }));
@@ -33,8 +33,9 @@ const StorecontextProvider = (props) => {
     const [food_list, setfood_list] = useState([]);
 
     const fetchfoodList = async () => {
+        // console.log(url+"/api/food/list");
         const response = await axios.get(url + '/api/food/list');
-        // console.log(response.data.data)
+        console.log(response.data);
         setfood_list(response.data.data);
     }
 
