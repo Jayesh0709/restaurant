@@ -8,7 +8,7 @@ const Order = ({url}) => {
   const [data, setdata] = useState([]);
   const fetch = async () => {
     const response = await axios.get(url+'/api/food/orderlist', { headers: { token } });
-    console.log(response.data);
+    // console.log(response.data);
     setdata(response.data.orders);
   }
 
