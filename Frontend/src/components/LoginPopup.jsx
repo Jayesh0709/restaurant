@@ -59,8 +59,9 @@ const LoginPopup = ({ setshowLogin }) => {
         // reset();
     }
 
+
     return (
-        <div className='w-[100%] bg-black/50 pointer-none z-1 h-[100%] absolute grid items-center justify-center '>
+        <div className='w-[100%] bg-black/50  fixed inset-0 pointer-none z-50 h-[100%]  grid items-center justify-center '>
             <form action="" onSubmit={handleSubmit(submit)} className='bg-white rounded-xl w-80 grid items-center px-3 pb-4'>
                 <div className='py-2  flex justify-between px-3 items-center'>
                     <h2 className='font-bold text-xl'>{currentState}</h2>
