@@ -20,7 +20,7 @@ const LoginPopup = ({ setshowLogin }) => {
 
     const navigate = useNavigate();
     const submit = async (data) => {
-        if (currentState === "sign up") {
+        if (currentState === "sign up"  ) {
             const response = await axios.post(`${url}/api/user/register`, {
                 name: data.name,
                 email: data.email,

@@ -5,13 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { assets2 } from '../assets/frontend_assets/assets';
 
 const Cart = () => {
-    const { cartItems, food_list, removeItems, url } = useContext(Storecontext);
+    const { cartItems, food_list, removeItems } = useContext(Storecontext);
+    const url = "https://res.cloudinary.com/dy0howkg3/image/upload/v1770800208";
     const navigate = useNavigate();
     let total = 0;
     // console.log(cartItems)
     if (Object.keys(cartItems).length > 0) {
         // console.log(food_list[0].price)
-
+        console.log("done");
+        console.log(cartItems)
         for (let itm in cartItems) {
             const item = food_list.find(obj => obj._id === itm);
             // console.log(typeof (item.price), typeof (cartItems[itm]));
@@ -38,7 +40,7 @@ const Cart = () => {
                         return (
                             <div key={indx}>
                                 <div className='grid grid-cols-[0.8fr_1.4fr_1fr_1fr_1fr_0.5fr] sm:grid-cols-[1fr_1.5fr_1fr_1fr_1fr_0.5fr] px-1 sm:px-3 mt-5 gap-2'>
-                                    <img src={url + "/images/" + item.image} alt="" className='h-12 w-fit ' />
+                                    <img src={url + "/" + item.image} alt="" className='h-12 w-fit ' />
                                     <div className='w[80%] flex-wrap flex'>{item.name}</div>
                                     <div>${item.price}</div>
                                     <div>{cartItems[item._id]}</div>

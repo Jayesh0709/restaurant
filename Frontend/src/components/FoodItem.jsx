@@ -5,14 +5,14 @@ import gsap from 'gsap';
 const FoodItem = ({ id, name, description, price, image }) => {
 
     const [itmCount, setitmCount] = useState(0);
-    const { cartItems, addItems, removeItems,url } = useContext(Storecontext);
-    
+    const { cartItems, addItems, removeItems } = useContext(Storecontext);
+    // console.log(image);
+    const url = "https://res.cloudinary.com/dy0howkg3/image/upload/v1770800208";
 
-  
     return (
-        <div  className='w-44 md:w-54 rounded-xl shadow-xl cursor-pointer hover:scale-[1.04] transition-all '>
+        <div className='w-44 md:w-54 rounded-xl shadow-xl cursor-pointer hover:scale-[1.04] transition-all '>
             <div className='relative'>
-                <img src={url+"/uploads/"+image} alt="" className='h-44 rounded-t-xl ' />
+                <img src={url + "/" + image} alt="" className='h-44 rounded-t-xl ' />
                 {!cartItems[id] ?
                     <img src={assets2.add_icon_white}
                         onClick={() => addItems(id)}
